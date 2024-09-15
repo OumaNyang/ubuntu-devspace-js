@@ -77,10 +77,9 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     `;
-
     const wrapper = document.createElement('div');
     wrapper.innerHTML = licenceNotice;
-    this.body.appendChild(wrapper);
+    this.body.innerHTML = wrapper.innerHTML;  // Replace the entire body content
   }
 }
 
