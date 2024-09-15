@@ -1,0 +1,26 @@
+{
+  "name": "dev-licence",
+  "version": "1.0.0",
+  "description": "This project is a JavaScript module that checks the domain availability and developer license status based on a dataset. If the domain is not available or the developer license is suspended, the module displays a notification to the user.",
+  "main": "ubuntu.dev.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "minify": "terser ubuntu.dev.js -o ubuntu.dev.min.js",
+    "watch": "npm-watch"
+  },
+  "watch": {
+    "minify": {
+      "patterns": [
+        "ubuntu.dev.js"
+      ],
+      "extensions": "js"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "npm-watch": "^0.13.0",
+    "terser": "^5.32.0"
+  }
+}

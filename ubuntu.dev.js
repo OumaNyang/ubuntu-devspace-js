@@ -89,7 +89,6 @@ init() {
   this.DevLicence();
 }
 }
-
 new UbuntuDevSpace().init();
 
 });
