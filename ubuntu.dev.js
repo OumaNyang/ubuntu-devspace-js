@@ -2,7 +2,8 @@ document.addEventListener("DOMContentLoaded", () => {
   "use strict";
   /*
   Author : Ouma Nyang
-  Modules : DevSpace JS
+  Modules : DevSpace JS ubuntu.dev.js
+
   */
   class UbuntuDevSpace {
   constructor() {
@@ -77,9 +78,10 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     `;
+     // Replace the entire body content
     const wrapper = document.createElement('div');
     wrapper.innerHTML = licenceNotice;
-    this.body.innerHTML = wrapper.innerHTML;  // Replace the entire body content
+    this.body.innerHTML = wrapper.innerHTML; 
   }
 }
 

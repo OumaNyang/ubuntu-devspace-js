@@ -1,8 +1,10 @@
- ## Ubuntu DevSpace JS Module
+# Ubuntu DevSpace JS Module
 
-This project is a JavaScript module that checks the domain availability and developer license status based on a dataset. If the domain is not available or the developer license is suspended, the module displays a notification to the user.
+This project is a JavaScript module that checks domain availability and developer license status based on a dataset. If the domain is not available or the developer license is suspended, the module displays a notification to the user.
 
-### Table of Contents
+For detailed instructions on how to integrate this module into your client's website or application, please refer to the [README-usage.md](README-usage.md) file.
+
+## Table of Contents
 
 - [About the Project](#about-the-project)
 - [Features](#features)
@@ -37,14 +39,13 @@ The `UbuntuDevSpace` module allows you to check domain status from a `clients.da
    cd ubuntu-devspace-js
    ```
 
-3. Run:
+3. Install dependencies:
 
    ```bash
    npm install
    ```
 
-
-4. Make sure to place your `clients.data.json` file in the appropriate directory.
+4. Place your `clients.data.json` file in the appropriate directory.
 
 ## Usage
 
@@ -122,10 +123,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-### Optional Additional Sections
-
-- **FAQ**: If your project has common questions or requires troubleshooting help.
-- **Screenshots**: If you want to include visual examples of the project in action.
-- **Acknowledgements**: If you want to thank any contributors or reference libraries/tools you used.
-
-You can customize this template further depending on the specific needs of your project!
+Feel free to customize the details based on your needs. This structure will help users understand the purpose, installation, usage, and contribution process for the `Ubuntu DevSpace JS Module`.
