@@ -10,6 +10,6 @@
   <h1>Hello, This is a sample Website</h1>
 </body>
 <!-- Script Link  hosted  in github and served  fron jsdeliver -->
-<script src="https://cdn.jsdelivr.net/gh/OumaNyang/ubuntu-devspace-js@main/ubuntu.dev.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/OumaNyang/ubuntu-devspace-js@main/ubuntu.dev.js"></script>
 
  </html>
