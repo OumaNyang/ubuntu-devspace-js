@@ -37,7 +37,14 @@ The `UbuntuDevSpace` module allows you to check domain status from a `clients.da
    cd ubuntu-devspace-js
    ```
 
-3. Make sure to place your `clients.data.json` file in the appropriate directory.
+3. Run:
+
+   ```bash
+   npm install
+   ```
+
+
+4. Make sure to place your `clients.data.json` file in the appropriate directory.
 
 ## Usage
 
