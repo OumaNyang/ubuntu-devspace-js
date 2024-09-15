@@ -1,0 +1,56 @@
+{
+  "localhost": {
+    "client_name": "Local Developer",
+    "client_domain": "localhost",
+    "project": "website",
+    "date_published": "2024-03-15 04:25:52",
+    "domain_status": "online",
+    "last_update": "2024-09-15 19:34:24",
+    "dev_licence_status": "suspended"
+  },
+  "127.0.0.1": {
+    "client_name": "Local Developer",
+    "client_domain": "127.0.0.1",
+    "project": "website",
+    "date_published": "2024-03-15 04:25:52",
+    "domain_status": "online",
+    "last_update": "2024-09-15 19:34:24",
+    "dev_licence_status": "suspended"
+  },
+  "oumanyang.com": {
+    "client_name": "Nyang Digital iHub",
+    "client_domain": "oumanyang.com",
+    "project": "website",
+    "date_published": "2024-03-15 04:25:52",
+    "domain_status": "online",
+    "last_update": "2024-09-15 19:34:24",
+    "dev_licence_status": "active"
+  },
+  "adosons.com": {
+    "client_name": "Adosons Limited",
+    "client_domain": "adosons.com",
+    "project": "website",
+    "date_published": "2024-03-15 04:25:52",
+    "domain_status": "online",
+    "last_update": "2024-09-15 19:34:24",
+    "dev_licence_status": "active"
+  },
+  "portal.adosons.com": {
+    "client_name": "Adosons Limited",
+    "client_domain": "portal.adosons.com",
+    "project": "web application",
+    "date_published": "2024-03-15 04:25:52",
+    "domain_status": "online",
+    "last_update": "2024-09-15 19:34:24",
+    "dev_licence_status": "active"
+  },
+  "azacloud.com": {
+    "client_name": "Azacloud Solutions",
+    "client_domain": "azacloud.com",
+    "project": "website",
+    "date_published": "2024-03-15 04:25:52",
+    "domain_status": "online",
+    "last_update": "2024-09-15 19:34:24",
+    "dev_licence_status": "active"
+  }
+}
