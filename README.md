@@ -30,6 +30,11 @@ The `UbuntuDevSpace` module allows you to check domain status from a `clients.da
 1. Clone the repository:
 
    ```bash
+   Credit to the developer Ouma Nyang: https://github.com/OumaNyang
+   ```
+1. Clone the repository:
+
+   ```bash
    git clone https://github.com/OumaNyang/ubuntu-devspace-js.git
    ```
 

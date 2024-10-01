@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async fetchClientData() {
     try {
-      const response = await fetch('./data/clients.data.json');  
+      const response = await fetch('https://cdn.jsdelivr.net/gh/OumaNyang/ubuntu-devspace-js@main/data/clients.data.json');  
       const devData = await response.json();  
        this.DevLicence(devData);  
     } catch (error) {
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const licenceNotice = `
       <style>
         body {
-          background: #4600DF;
+          background: #EA0C0CE7;
           font-family: 'Ubuntu', Tahoma, Geneva, Verdana, sans-serif;
         }
         #notice {

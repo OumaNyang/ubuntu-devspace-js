@@ -11,5 +11,6 @@
 </body>
 <!-- Script Link  hosted  in github and served  fron jsdeliver -->
 <script src="https://cdn.jsdelivr.net/gh/OumaNyang/ubuntu-devspace-js@main/ubuntu.dev.js"></script>
+<!-- <script src="ubuntu.dev.min.js"></script> -->
 
  </html>
