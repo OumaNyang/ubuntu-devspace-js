@@ -6,7 +6,9 @@
     "date_published": "2024-03-15 04:25:52",
     "domain_status": "online",
     "last_update": "2024-09-15 19:34:24",
-    "dev_licence_status": "suspended"
+    "dev_licence_status": "deleted",
+    "customer_email": "dev@company.com",
+    "customer_phone": "+254700123456"
   },
   "127.0.0.1": {
     "client_name": "Local Developer",
@@ -15,25 +17,31 @@
     "date_published": "2024-03-15 04:25:52",
     "domain_status": "online",
     "last_update": "2024-09-15 19:34:24",
-    "dev_licence_status": "suspended"
+    "dev_licence_status": "development",
+    "customer_email": "dev@company.com",
+    "customer_phone": "+254700123456"
   },
-  "oumanyang.com": {
-    "client_name": "Nyang Digital iHub",
-    "client_domain": "oumanyang.com",
-    "project": "website",
+  "adosons.co.ke": {
+    "client_name": "Adosons Limited",
+    "client_domain": "adosons.co.ke",
+    "project": "web application",
     "date_published": "2024-03-15 04:25:52",
     "domain_status": "online",
-    "last_update": "2024-09-15 19:34:24",
-    "dev_licence_status": "active"
+    "last_update": "2024-10-01 18:06:24",
+    "dev_licence_status": "maintenance",
+    "customer_email": "info@adosons.co.ke",
+    "customer_phone": "+254 725 917 593"
   },
   "adosons.com": {
     "client_name": "Adosons Limited",
     "client_domain": "adosons.com",
-    "project": "website",
+    "project": "web application",
     "date_published": "2024-03-15 04:25:52",
     "domain_status": "online",
     "last_update": "2024-10-01 18:06:24",
-    "dev_licence_status": "suspended"
+    "dev_licence_status": "active",
+    "customer_email": "support@adosons.com",
+    "customer_phone": "+254711223344"
   },
   "portal.adosons.com": {
     "client_name": "Adosons Limited",
@@ -42,15 +50,31 @@
     "date_published": "2024-03-15 04:25:52",
     "domain_status": "online",
     "last_update": "2024-10-01 18:06:24",
-    "dev_licence_status": "suspended"
+    "dev_licence_status": "active",
+    "customer_email": "support@adosons.com",
+    "customer_phone": "+254711223344"
   },
-  "azacloud.com": {
-    "client_name": "Azacloud Solutions",
-    "client_domain": "azacloud.com",
-    "project": "website",
+  "vitalift.co.ke": {
+    "client_name": "Powerlife Africa",
+    "client_domain": "vitalift.co.ke",
+    "project": "web application",
     "date_published": "2024-03-15 04:25:52",
     "domain_status": "online",
-    "last_update": "2024-09-15 19:34:24",
-    "dev_licence_status": "active"
+    "last_update": "2024-10-01 18:06:24",
+    "dev_licence_status": "deleted",
+    "customer_phone": "+25470000000",
+    "customer_email": "sales@vitalift.co.ke"
+  },
+  "desk.vitalift.co.ke": {
+    "client_name": "Powerlife Africa",
+    "client_domain": "desk.vitalift.co.ke",
+    "project": "web application",
+    "date_published": "2024-03-15 04:25:52",
+    "domain_status": "online",
+    "last_update": "2024-10-01 18:06:24",
+    "dev_licence_status": "deleted",
+    "customer_phone": "+25470000000",
+    "customer_email": "sales@vitalift.co.ke"
   }
+  
 }

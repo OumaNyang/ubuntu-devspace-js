@@ -1,131 +1,138 @@
-# Ubuntu DevSpace JS Module
+# Ubuntu DevSpace JS License Manager
 
-This project is a JavaScript module that checks domain availability and developer license status based on a dataset. If the domain is not available or the developer license is suspended, the module displays a notification to the user.
+![License Status](https://img.shields.io/badge/license-MIT-blue.svg) 
+![Version](https://img.shields.io/badge/version-2.0.0-green.svg)
 
-For detailed instructions on how to integrate this module into your client's website or application, please refer to the [README-usage.md](README-usage.md) file.
+A lightweight JavaScript module for domain license management that validates developer licenses and displays appropriate status notifications.
 
-## Table of Contents
+## Key Features
 
-- [About the Project](#about-the-project)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Data Format](#data-format)
-- [Contributing](#contributing)
-- [License](#license)
-
-## About the Project
-
-The `UbuntuDevSpace` module allows you to check domain status from a `clients.data.json` file. It compares the current domain (using `window.location.hostname`) with data provided in a JSON file and responds with a notification if the domain has a suspended developer license.
-
-### Features
-
-- Fetches domain data from a `clients.data.json` file.
-- Displays a notification when the developer license is suspended.
-- Easily configurable and customizable for any website.
+- ✅ Real-time domain license verification
+- 🛠 Multiple status types (active, suspended, maintenance, etc.)
+- 📱 Fully responsive notification system
+- 📞 Client-specific contact information display
+- ⚡ Automatic updates from centralized JSON data
 
 ## Installation
 
-1. Clone the repository:
-
-   ```bash
-   Credit to the developer Ouma Nyang: https://github.com/OumaNyang
-   ```
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/OumaNyang/ubuntu-devspace-js.git
-   ```
-
-2. Navigate to the project directory:
-
-   ```bash
-   cd ubuntu-devspace-js
-   ```
-
-3. Install dependencies:
-
-   ```bash
-   npm install
-   ```
-
-4. Place your `clients.data.json` file in the appropriate directory.
-
-## Usage
-
-1. Ensure you have a `clients.data.json` file that contains domain data. The JSON file should look like this:
-
-   ```json
-   {
-     "localhost": {
-       "client_name": "Local Developer",
-       "client_domain": "localhost",
-       "project": "website",
-       "date_published": "2024-03-15 04:25:52",
-       "domain_status": "online",
-       "last_update": "2024-09-15 19:34:24",
-       "dev_licence_status": "suspended"
-     },
-     "example.com": {
-       "client_name": "Example Client",
-       "client_domain": "example.com",
-       "project": "website",
-       "date_published": "2023-02-10 12:34:56",
-       "domain_status": "online",
-       "last_update": "2024-09-10 11:22:33",
-       "dev_licence_status": "active"
-     }
-   }
-   ```
-
-2. Include the `ubuntu.dev.js` script in your HTML file:
-
-   ```html
-   <script src="/path/to/ubuntu.dev.js"></script>
-   ```
-
-3. The script will automatically fetch the `clients.data.json` file and check the developer license status for the current domain. If the license is suspended, a notification will be displayed on the page.
-
-## Project Structure
-
-- `/data/clients.data.json`: Contains the domain and license status information.
-- `/ubuntu.dev.js`: JavaScript file that checks the domain and renders notifications if the license is suspended.
-
-## Data Format
-
-The `clients.data.json` file should be structured like this:
-
-```json
-{
-  "domain.com": {
-    "client_name": "Client Name",
-    "client_domain": "domain.com",
-    "project": "Project Name",
-    "date_published": "YYYY-MM-DD HH:MM:SS",
-    "domain_status": "online/offline",
-    "last_update": "YYYY-MM-DD HH:MM:SS",
-    "dev_licence_status": "active/suspended"
-  }
-}
+### CDN Installation (Recommended)
+```html
+<script src="https://cdn.jsdelivr.net/gh/OumaNyang/ubuntu-devspace-js@main/dist/ubuntu.dev.min.js"></script>
 ```
+### npm Installation
+``npm install ubuntu-devspace-js
+Manual Installation
+Download the latest release:``
 
-Each key represents a domain, and the value contains information about the client, project, domain status, and developer license status.
+```git clone https://github.com/OumaNyang/ubuntu-devspace-js.git```
+Include in your project:
 
+ ```
+<script src="/path/to/ubuntu.dev.min.js"></script>```
+## Configuration
+Data Structure
+Create a clients.data.json file with your domain information:
+```
+json
+{
+  "example.com": {
+    "client_name": "Example Client",
+    "client_domain": "example.com",
+    "project": "Corporate Website",
+    "date_published": "2024-01-15 09:00:00",
+    "domain_status": "online",
+    "last_update": "2024-06-01 14:30:00",
+    "dev_licence_status": "active",
+    "customer_email": "support@example.com",
+    "customer_phone": "+254700123456"
+  }
+}```
+Status Types
+Status	Description	Visual Indicator
+active	Fully operational	(No display)
+development	Under construction	🚀 Blue notice
+maintenance	Temporary maintenance	🔧 Green notice
+suspended	License suspended	⚠️ Red notice
+legal_hold	Restricted access	⚖️ Purple notice
+deleted	Permanently removed	❌ Blank page
+Implementation Guide
+Basic Implementation:
+
+javascript
+document.addEventListener("DOMContentLoaded", () => {
+  new UbuntuDevSpace().init();
+});
+Advanced Configuration:
+
+javascript
+const config = {
+  dataUrl: "https://yourdomain.com/data/clients.data.json",
+  noticeDisplayDays: 45, // Custom notice duration
+  customStyles: {
+    development: {
+      color: "#3a7bd5",
+      icon: "👷"
+    }
+  }
+};
+new UbuntuDevSpace(config).init();
+Project Structure
+```
+ubuntu-devspace-js/
+├── dist/                   # Compiled files
+│   ├── ubuntu.dev.js       # Development version
+│   └── ubuntu.dev.min.js   # Production version
+├── data/
+│   └── clients.data.json   # Client license data
+├── src/                    # Source files
+├── LICENSE
+└── README.md
+```
+## Best Practices
+
+### Data Management:
+
+Update clients.data.json regularly
+
+Use ISO 8601 format for dates (YYYY-MM-DD HH:MM:SS)
+
+Include complete client contact information
+
+### Performance:
+
+Use the minified version in production
+
+Host JSON data on a CDN for faster access
+
+Implement caching where possible
+
+- Troubleshooting
+- Issue	Solution
+- Notifications not displaying	Verify domain exists in clients.data.json
+- Incorrect status shown	Check dev_licence_status value
+- Slow loading	Use CDN-hosted JSON file
 ## Contributing
+We welcome contributions! Please follow these steps:
 
-Contributions are welcome! If you have suggestions for improvements or new features, feel free to open an issue or submit a pull request.
+## Fork the repository
 
-1. Fork the repository.
-2. Create a new branch for your feature or bugfix: `git checkout -b feature-name`.
-3. Commit your changes: `git commit -m 'Add some feature'`.
-4. Push to the branch: `git push origin feature-name`.
-5. Submit a pull request.
+Create a feature branch (git checkout -b feature/improvement)
+
+Commit your changes (git commit -m 'Add new feature')
+
+Push to the branch (git push origin feature/improvement)
+
+Open a Pull Request
+
+## Support
+For assistance, contact:
+
+Email: support@azacloud.com
+
+GitHub Issues: Report an issue
 
 ## License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
-
----
-
-Feel free to customize the details based on your needs. This structure will help users understand the purpose, installation, usage, and contribution process for the `Ubuntu DevSpace JS Module`.
+Maintained by: Ouma Nyang | Azacloud Solutions
+Last Updated:  June 2025
