@@ -9,7 +9,9 @@ document.addEventListener("DOMContentLoaded", (() => {
 
       async fetchClientData() {
           try {
-              const response = await fetch("./data/clients.data.json");
+            // const response = await fetch("./data/clients.data.json");
+            const response = await fetch("https://cdn.jsdelivr.net/gh/OumaNyang/ubuntu-devspace-js@main/data/clients.data.json");
+
               const devData = await response.json();
               this.handleLicenseStatus(devData);
           } catch (error) {
@@ -248,4 +250,5 @@ document.addEventListener("DOMContentLoaded", (() => {
   }
   
   new UbuntuDevSpace().init();
+
 }));
