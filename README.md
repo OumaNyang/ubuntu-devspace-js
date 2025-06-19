@@ -16,24 +16,25 @@ A lightweight JavaScript module for domain license management that validates dev
 ## Installation
 
 ### CDN Installation (Recommended)
-```html
-<script src="https://cdn.jsdelivr.net/gh/OumaNyang/ubuntu-devspace-js@main/dist/ubuntu.dev.min.js"></script>
-```
+``` 
+<script src="https://cdn.jsdelivr.net/gh/OumaNyang/ubuntu-devspace-js@main/dist/ubuntu.dev.min.js"></script> ```
+ 
 ### npm Installation
-``npm install ubuntu-devspace-js
+```
+``` npm install ubuntu-devspace-js ```
 Manual Installation
-Download the latest release:``
-
-```git clone https://github.com/OumaNyang/ubuntu-devspace-js.git```
+Download the latest release:
+ 
+git clone [https://github.com/OumaNyang/ubuntu-devspace-js.git](https://github.com/OumaNyang/ubuntu-devspace-js.git)
 Include in your project:
 
- ```
-<script src="/path/to/ubuntu.dev.min.js"></script>```
-## Configuration
-Data Structure
+```html
+
+<script src="/path/to/ubuntu.dev.min.js"></script> ```
+### Configuration
+#### Data Structure
 Create a clients.data.json file with your domain information:
-```
-json
+ ```
 {
   "example.com": {
     "client_name": "Example Client",
@@ -46,7 +47,7 @@ json
     "customer_email": "support@example.com",
     "customer_phone": "+254700123456"
   }
-}```
+} ```
 Status Types
 Status	Description	Visual Indicator
 active	Fully operational	(No display)
@@ -55,18 +56,20 @@ maintenance	Temporary maintenance	🔧 Green notice
 suspended	License suspended	⚠️ Red notice
 legal_hold	Restricted access	⚖️ Purple notice
 deleted	Permanently removed	❌ Blank page
+
+Export to Sheets
 Implementation Guide
 Basic Implementation:
+JavaScript
 
-javascript
 document.addEventListener("DOMContentLoaded", () => {
   new UbuntuDevSpace().init();
 });
 Advanced Configuration:
+JavaScript
 
-javascript
 const config = {
-  dataUrl: "https://yourdomain.com/data/clients.data.json",
+  dataUrl: "[https://yourdomain.com/data/clients.data.json](https://yourdomain.com/data/clients.data.json)",
   noticeDisplayDays: 45, // Custom notice duration
   customStyles: {
     development: {
@@ -77,7 +80,6 @@ const config = {
 };
 new UbuntuDevSpace(config).init();
 Project Structure
-```
 ubuntu-devspace-js/
 ├── dist/                   # Compiled files
 │   ├── ubuntu.dev.js       # Development version
@@ -87,52 +89,46 @@ ubuntu-devspace-js/
 ├── src/                    # Source files
 ├── LICENSE
 └── README.md
-```
-## Best Practices
-
-### Data Management:
-
+Best Practices
+Data Management:
 Update clients.data.json regularly
-
 Use ISO 8601 format for dates (YYYY-MM-DD HH:MM:SS)
-
 Include complete client contact information
-
-### Performance:
-
+Performance:
 Use the minified version in production
-
 Host JSON data on a CDN for faster access
-
 Implement caching where possible
+Troubleshooting
+Issue	Solution
+Notifications not displaying	Verify domain exists in clients.data.json
+Incorrect status shown	Check dev_licence_status value
+Slow loading	Use CDN-hosted JSON file
 
-- Troubleshooting
-- Issue	Solution
-- Notifications not displaying	Verify domain exists in clients.data.json
-- Incorrect status shown	Check dev_licence_status value
-- Slow loading	Use CDN-hosted JSON file
-## Contributing
+Export to Sheets
+Contributing
 We welcome contributions! Please follow these steps:
 
-## Fork the repository
+Fork the repository
+Create a feature branch:
+Bash
 
-Create a feature branch (git checkout -b feature/improvement)
+git checkout -b feature/improvement
+Commit your changes:
+Bash
 
-Commit your changes (git commit -m 'Add new feature')
+git commit -m 'Add new feature'
+Push to the branch:
+Bash
 
-Push to the branch (git push origin feature/improvement)
-
+git push origin feature/improvement
 Open a Pull Request
-
-## Support
+Support
 For assistance, contact:
 
 Email: support@azacloud.com
-
 GitHub Issues: Report an issue
-
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
+License
+This project is licensed under the MIT License — see the LICENSE file for details.
 
 Maintained by: Ouma Nyang | Azacloud Solutions
-Last Updated:  June 2025
+Last Updated: June 2025

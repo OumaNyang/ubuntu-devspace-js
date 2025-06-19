@@ -6,7 +6,7 @@
     "date_published": "2024-03-15 04:25:52",
     "domain_status": "online",
     "last_update": "2024-09-15 19:34:24",
-    "dev_licence_status": "deleted",
+    "dev_licence_status":"development",
     "customer_email": "dev@company.com",
     "customer_phone": "+254700123456"
   },
@@ -21,17 +21,7 @@
     "customer_email": "dev@company.com",
     "customer_phone": "+254700123456"
   },
-  "adosons.co.ke": {
-    "client_name": "Adosons Limited",
-    "client_domain": "adosons.co.ke",
-    "project": "web application",
-    "date_published": "2024-03-15 04:25:52",
-    "domain_status": "online",
-    "last_update": "2024-10-01 18:06:24",
-    "dev_licence_status": "maintenance",
-    "customer_email": "info@adosons.co.ke",
-    "customer_phone": "+254 725 917 593"
-  },
+
   "adosons.com": {
     "client_name": "Adosons Limited",
     "client_domain": "adosons.com",
@@ -55,26 +45,81 @@
     "customer_phone": "+254711223344"
   },
   "vitalift.co.ke": {
-    "client_name": "Powerlife Africa",
+    "client_name": "Vita-Lift/Powerlife Africa",
     "client_domain": "vitalift.co.ke",
     "project": "web application",
-    "date_published": "2024-03-15 04:25:52",
+    "date_published": "2025-03-15 00:23:42",
     "domain_status": "online",
-    "last_update": "2024-10-01 18:06:24",
+    "last_update": "2025-06-19 13:33:20",
     "dev_licence_status": "deleted",
     "customer_phone": "--",
     "customer_email": "sales@vitalift.co.ke"
   },
   "desk.vitalift.co.ke": {
-    "client_name": "Powerlife Africa",
+    "client_name": "Vita-Lift/Powerlife Africa",
     "client_domain": "desk.vitalift.co.ke",
     "project": "web application",
-    "date_published": "2024-03-15 04:25:52",
+    "date_published": "2025-03-15 00:23:42",
     "domain_status": "online",
-    "last_update": "2024-10-01 18:06:24",
+    "last_update": "2025-06-19 13:33:20",
     "dev_licence_status": "deleted",
     "customer_phone": "--",
     "customer_email": "sales@vitalift.co.ke"
+  },
+  "lovidovi.co.ke": {
+    "client_name": "LoviDovi Health and Wellness",
+    "client_domain": "lovidovi.co.ke",
+    "project": "E-Commerce Web application",
+    "date_published": "2025-05-12 00:00:00",
+    "domain_status": "online",
+    "last_update": "2025-06-19 13:33:20",
+    "dev_licence_status": "active",
+    "customer_phone": "0700000090",
+    "customer_email": "sales@lovidovi.co.ke"
+  },
+  "afya.lovidovi.co.ke": {
+    "client_name": "LoviDovi Health and Wellness",
+    "client_domain": "afya.lovidovi.co.ke",
+    "project": "E-Commerce Web application",
+    "date_published": "2025-05-12 00:00:00",
+    "domain_status": "online",
+    "last_update": "2025-06-19 13:33:20",
+    "dev_licence_status": "active",
+    "customer_phone": "0700000090",
+    "customer_email": "sales@lovidovi.co.ke"
+  },
+  "adosons.co.ke": {
+    "client_name": "Adosons Limited",
+    "client_domain": "adosons.co.ke",
+    "project": "web application",
+    "date_published": "2025-06-19 13:35:23",
+    "domain_status": "online",
+    "last_update": "2025-06-19 13:35:23",
+    "dev_licence_status": "development",
+    "customer_email": "info@adosons.co.ke",
+    "customer_phone": "+254 725 917 593"
+  },
+  "efotechsolutions.com": {
+    "client_name": "Efotech K Solutions",
+    "client_domain": "efotechsolutions.com",
+    "project": "E-Commerce Web application",
+    "date_published": "2025-06-19 13:35:23",
+    "domain_status": "online",
+    "last_update": "2025-06-19 13:35:23",
+    "dev_licence_status": "development",
+    "customer_email": "info@efotechsolutions.com",
+    "customer_phone": "+254 725 858 653"
+  },
+  "portal.efotechsolutions.com": {
+    "client_name": "Efotech K Solutions",
+    "client_domain": "portal.efotechsolutions.com",
+    "project": "E-Commerce Web application",
+    "date_published": "2025-06-19 13:35:23",
+    "domain_status": "online",
+    "last_update": "2025-06-19 13:35:23",
+    "dev_licence_status": "development",
+    "customer_email": "info@efotechsolutions.com",
+    "customer_phone": "+254 725 858 653"
   }
   
 }

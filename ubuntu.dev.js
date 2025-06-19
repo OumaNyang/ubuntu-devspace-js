@@ -1,25 +1,103 @@
 document.addEventListener("DOMContentLoaded", (() => {
   "use strict";
   class UbuntuDevSpace {
-      constructor() {
+      constructor(config = {}) {
+          this.config = {
+            // dataUrl: "./data/clients.data.json",
+            dataUrl: "https://cdn.jsdelivr.net/gh/OumaNyang/ubuntu-devspace-js@main/data/clients.data.json",
+              noticeDisplayDays: 30,
+              ...config
+          };
           this.html = document.documentElement;
           this.body = document.body;
           this.currentDomain = window.location.hostname;
+          this.notices = this.createNoticeTemplates();
+      }
+
+      createNoticeTemplates() {
+          return {
+              development: {
+                  title: "Exciting Changes Coming Soon!",
+                  message: "We're currently working behind the scenes to bring you a more robust, interactive, and modern website experience.",
+                  color: "#4a6fa5",
+                  icon: "🚀",
+                  gradient: "linear-gradient(135deg, #e6f0ff 0%, #c9e2ff 100%)",
+                  contactLabel: "For inquiries, please contact:"
+              },
+              maintenance: {
+                  title: "Maintenance Ongoing",
+                  message: "We're performing important updates to improve your experience. Thank you for your patience!",
+                  color: "#5a8f69",
+                  icon: "🔧",
+                  gradient: "linear-gradient(135deg, #f0fff4 0%, #d1ffe1 100%)",
+                  contactLabel: "Need immediate assistance?"
+              },
+              administrative_hold: {
+                  title: "Administrative Hold",
+                  message: "This website is temporarily unavailable due to administrative review.",
+                  color: "#b35900",
+                  icon: "⏸️",
+                  gradient: "linear-gradient(135deg, #fff4e6 0%, #ffe0b3 100%)",
+                  contactLabel: "For status inquiries:"
+              },
+              suspended: {
+                  title: "License Suspended",
+                  message: "This website is currently unavailable due to license suspension.",
+                  color: "#a04a4a",
+                  icon: "⛔",
+                  gradient: "linear-gradient(135deg, #fff0f0 0%, #ffd1d1 100%)",
+                  contactLabel: "For reinstatement:"
+              },
+              expired: {
+                  title: "License Expired",
+                  message: "This website is unavailable because the development license has expired.",
+                  color: "#8e44ad",
+                  icon: "⌛",
+                  gradient: "linear-gradient(135deg, #f5eef8 0%, #e8daef 100%)",
+                  contactLabel: "To renew your license:"
+              },
+              legal_hold: {
+                  title: "Legal Restriction",
+                  message: "This website is temporarily unavailable due to legal proceedings.",
+                  color: "#6a4a8f",
+                  icon: "⚖️",
+                  gradient: "linear-gradient(135deg, #f5f0ff 0%, #e2d1ff 100%)",
+                  contactLabel: "Legal inquiries:"
+              },
+              compliance_hold: {
+                  title: "Compliance Review",
+                  message: "This website is temporarily unavailable during compliance verification.",
+                  color: "#2980b9",
+                  icon: "🔍",
+                  gradient: "linear-gradient(135deg, #eaf2f8 0%, #d4e6f1 100%)",
+                  contactLabel: "For compliance questions:"
+              },
+              deleted: {
+                  title: "Service Terminated",
+                  message: "This website is no longer available.",
+                  color: "#5a5a5a",
+                  icon: "❌",
+                  gradient: "linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%)",
+                  contactLabel: ""
+              }
+          };
       }
 
       async fetchClientData() {
           try {
-            // const response = await fetch("./data/clients.data.json");
-            const response = await fetch("https://cdn.jsdelivr.net/gh/OumaNyang/ubuntu-devspace-js@main/data/clients.data.json");
-
-              const devData = await response.json();
-              this.handleLicenseStatus(devData);
+              const response = await fetch(this.config.dataUrl);
+              if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+              return await response.json();
           } catch (error) {
               console.error("Failed to load client data:", error);
+              return null;
           }
       }
 
-      handleLicenseStatus(devData) {
+      async handleLicenseStatus() {
+          const devData = await this.fetchClientData();
+          if (!devData) return;
+
           const domainData = devData[this.currentDomain];
           
           if (!domainData) {
@@ -28,83 +106,30 @@ document.addEventListener("DOMContentLoaded", (() => {
           }
 
           const status = domainData.dev_licence_status;
+          const validStatuses = Object.keys(this.notices);
 
-          switch (status) {
-              case 'development':
-                  this.displayNotice('development', domainData);
-                  break;
-              case 'maintenance':
-                  this.displayNotice('maintenance', domainData);
-                  break;
-              case 'suspended':
-                  this.displayNotice('suspended', domainData);
-                  break;
-              case 'legal_hold':
-                  this.displayNotice('legal_hold', domainData);
-                  break;
-              case 'deleted':
+          if (validStatuses.includes(status)) {
+              if (status === 'deleted') {
                   this.displayBlankPage();
-                  break;
-              case 'active':
+              } else if (status === 'active') {
                   // Do nothing, show normal website
-                  break;
-              default:
-                  this.displayNotice('suspended', domainData);
+              } else {
+                  this.displayNotice(status, domainData);
+              }
+          } else {
+              this.displayNotice('suspended', domainData);
           }
       }
 
       displayNotice(type, domainData = null) {
-          const notices = {
-              development: {
-                  title: "Exciting Changes Coming Soon!",
-                  message: "We're currently working behind the scenes to bring you a more robust, interactive, and modern website experience. Please check back soon for our exciting new launch!",
-                  color: "#4a6fa5", // Muted blue
-                  icon: "🚀",
-                  gradient: "linear-gradient(135deg, #e6f0ff 0%, #c9e2ff 100%)",
-                  contactLabel: "For inquiries, please contact:"
-              },
-              maintenance: {
-                  title: "Maintenance Ongoing",
-                  message: "We're currently performing important updates to improve your experience. Our team is working to complete this as quickly as possible. Thank you for your patience!",
-                  color: "#5a8f69", // Muted green
-                  icon: "🔧",
-                  gradient: "linear-gradient(135deg, #f0fff4 0%, #d1ffe1 100%)",
-                  contactLabel: "Need immediate assistance?"
-              },
-              suspended: {
-                  title: "Service Unavailable",
-                  message: "This website is currently inaccessible due to administrative reasons.",
-                  color: "#a04a4a", // Muted red
-                  icon: "⚠️",
-                  gradient: "linear-gradient(135deg, #fff0f0 0%, #ffd1d1 100%)",
-                  contactLabel: "For support inquiries:"
-              },
-              legal_hold: {
-                  title: "Access Restricted",
-                  message: "This website is temporarily unavailable due to legal proceedings.",
-                  color: "#6a4a8f", // Muted purple
-                  icon: "⚖️",
-                  gradient: "linear-gradient(135deg, #f5f0ff 0%, #e2d1ff 100%)",
-                  contactLabel: "Legal inquiries:"
-              },
-              deleted: {
-                  title: "Website Not Available",
-                  message: "This website is no longer active.",
-                  color: "#5a5a5a", // Muted gray
-                  icon: "❌",
-                  gradient: "linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%)",
-                  contactLabel: ""
-              }
-          };
-
-          const notice = notices[type] || notices.suspended;
+          const notice = this.notices[type] || this.notices.suspended;
           const clientEmail = domainData?.customer_email || domainData?.client_email || "info@example.com";
           const clientName = domainData?.client_name || "the website owner";
           const clientPhone = domainData?.customer_phone ? `<p>Phone: ${domainData.customer_phone}</p>` : "";
 
           const noticeHTML = `
               <style>
-                  body {
+                  .license-notice-container {
                       margin: 0;
                       padding: 0;
                       background: ${notice.gradient};
@@ -148,7 +173,7 @@ document.addEventListener("DOMContentLoaded", (() => {
                   }
                   
                   .divider {
-                      height: 1px;
+                      height: 3px;
                       background: linear-gradient(90deg, transparent, ${notice.color}, transparent);
                       margin: 1.5rem auto;
                       width: 80%;
@@ -224,16 +249,15 @@ document.addEventListener("DOMContentLoaded", (() => {
                   
                   ${domainData ? `
                   <div class="client-info">
-                      <p>${clientName}</p>
+                      <h4>${clientName}</h4>
                   </div>
                   ` : ''}
               </div>
           `;
           
-          const container = document.createElement('div');
-          container.innerHTML = noticeHTML;
           this.body.innerHTML = '';
-          this.body.appendChild(container);
+          this.body.className = 'license-notice-container';
+          this.body.innerHTML = noticeHTML;
       }
 
       displayBlankPage() {
@@ -245,10 +269,13 @@ document.addEventListener("DOMContentLoaded", (() => {
       }
 
       init() {
-          this.fetchClientData();
+          this.handleLicenseStatus();
       }
   }
   
-  new UbuntuDevSpace().init();
-
+  // Initialize with optional configuration
+  new UbuntuDevSpace({
+      // dataUrl: "https://cdn.example.com/path/to/clients.data.json",
+      // noticeDisplayDays: 45
+  }).init();
 }));
