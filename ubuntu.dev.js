@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", (() => {
                   }
                   
                   .client-info {
-                      font-size: 1.2rem;
+                      font-size: 1rem;
                       margin-top: 1rem;
                       color: #666;
                   }
@@ -240,8 +240,7 @@ document.addEventListener("DOMContentLoaded", (() => {
                   
                   <div class="support-info">
                       <p style="margin:0 0 5px 0;font-weight:500;">${notice.contactLabel}</p>
-                      <p style="margin:0 0 5px 0; ">Contact:-</p>
-                      <a class="support-link" href="mailto:${clientEmail}">
+                       <a class="support-link" href="mailto:${clientEmail}">
                           ${clientEmail}
                       </a>
                       ${clientPhone}
