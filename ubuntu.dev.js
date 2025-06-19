@@ -148,7 +148,7 @@ document.addEventListener("DOMContentLoaded", (() => {
                       max-width: 500px;
                       border-radius: 12px;
                       box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-                      padding: 1.5rem;
+                      padding: 1rem;
                       margin: 20px;
                       text-align: center;
                       animation: fadeIn 0.4s ease-out;
@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", (() => {
                   }
                   
                   .client-info {
-                      font-size: 0.85rem;
+                      font-size: 1.2rem;
                       margin-top: 1rem;
                       color: #666;
                   }
@@ -240,6 +240,7 @@ document.addEventListener("DOMContentLoaded", (() => {
                   
                   <div class="support-info">
                       <p style="margin:0 0 5px 0;font-weight:500;">${notice.contactLabel}</p>
+                      <p style="margin:0 0 5px 0; ">Contact:-</p>
                       <a class="support-link" href="mailto:${clientEmail}">
                           ${clientEmail}
                       </a>
@@ -249,7 +250,7 @@ document.addEventListener("DOMContentLoaded", (() => {
                   
                   ${domainData ? `
                   <div class="client-info">
-                      <h4>${clientName}</h4>
+                      <p>${clientName}</p>
                   </div>
                   ` : ''}
               </div>
